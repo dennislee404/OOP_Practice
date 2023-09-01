@@ -14,6 +14,10 @@ class Library
 	def remove_book(book_name)
 		@books.delete(book_name)
 	end
+
+	def list_books
+		@books
+	end
 end
 
 library = Library.new
@@ -23,7 +27,7 @@ while i < 10
 	library.add_book("Book #{i+1}")
 	i += 1
 end
-puts library.books
+puts library.list_books
 
 library.remove_book("Book 2")
 puts library.books
@@ -31,4 +35,6 @@ library.remove_book("Book 8")
 puts library.books
 library.remove_book("Book 5")
 puts library.books
+
+
 

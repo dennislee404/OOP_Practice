@@ -9,13 +9,18 @@ class Email
 		@content = content
 	end
 
-	def check(offensive_word)
+	def check
+		offensive_words = ["offensive","chicken","content"]
 		words = @content.scan(/\w+/)
 		i = 0
 		while i < words.length
-			if words[i] == offensive_word
-				puts "This email contains offensive words"
-				return
+			u = 0
+			while u < offensive_words.length
+				if words[i] == offensive_words[u]
+					puts "This email contains offensive words"
+					return
+				end
+				u += 1
 			end
 			i += 1
 		end
@@ -23,10 +28,10 @@ class Email
 	end
 end
 
-content1 = "hi, bye yo wassup, hi hi hi yo, bye huh wassup yo"
-content2 = "A A A B B B B C C D"
+content1 = "Write a class Email with attributes sender, receiver, and content."
+content2 = "Implement a method to check if the content contains any offensive words"
 email1 = Email.new("Dennis","Chris",content1)
 email2 = Email.new("Chris","Dennis",content2)
 
-email1.check("bye")
-email2.check("bye")
+email1.check
+email2.check

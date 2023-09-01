@@ -3,9 +3,9 @@
 
 class Student
 	attr_reader :name, :grades, :average
-	def initialize(name)
+	def initialize(name,grades)
 		@name = name
-		@grades = [83,89,67,90,78]
+		@grades = grades
 	end
 
 	def average
@@ -22,7 +22,7 @@ class Student
 	end
 end
 
-student1 = Student.new("Dennis")
+student1 = Student.new("Dennis",[66,76,86,33])
 puts student1.name
 puts student1.grades
 puts student1.average
